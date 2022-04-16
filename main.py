@@ -76,4 +76,7 @@ def deal_file(date="2020.06.24"):
 
 
 if __name__ == '__main__':
+    start_time = time.time()
     fire.Fire(deal_file)
+    end_time = time.time()
+    print("运行时间:", end_time - start_time)
