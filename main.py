@@ -46,8 +46,8 @@ def save_to_file(df, date):
 
 
 def deal_file(date="2020.06.24"):
+    df = pd.DataFrame(columns=["姓名", "文件名日期", "截图姓名", "结果", "采样日期", "是否完成"])
     for file in os.listdir(date):
-        df = pd.DataFrame(columns=["姓名", "文件名日期", "截图姓名", "结果", "采样日期", "是否完成"])
         img_path = date + "/" + file
         username = file.split(".")[0]
         img = cv2.imread(img_path)
@@ -72,7 +72,7 @@ def deal_file(date="2020.06.24"):
             {"姓名": username, "文件名日期": date, "截图姓名": name_ocr, "结果": nucleic_result_ocr,
              "采样日期": time_ocr, "是否完成": "是" if validate else "否"},
             ignore_index=True)
-        save_to_file(df, date)
+    save_to_file(df, date)
 
 
 if __name__ == '__main__':
