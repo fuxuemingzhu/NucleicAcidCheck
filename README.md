@@ -1,19 +1,20 @@
 # NucleicAcidCheck
+
 使用 OCR + 正则表达式实现核酸检测截图的自动校验，复现复旦大学博士生的代码。
 
 相关报道：
 
-![](https://mmbiz.qpic.cn/mmbiz_png/1hReHaqafafia9CNKlbGAroF0s1wHd5x0uLfvUnEzgM1IRpYiakqPPJgsZWYdujW7Lr5QDzJPby0D55ibml2N4vQg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](https://picture-bed-1251805293.file.myqcloud.com/640.png)
 
 ## 主要技术
 
 Python + OCR + 正则表达式
 
-![](https://mmbiz.qpic.cn/mmbiz_png/TQ8S0BVeWIxQYcgy36Ixic7zt99MACo0EPN5P2Hjq72ocgU8NCNXmZcMtiaibSUuQEJnKNUfTZicIHGMCKwblEMN5w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](https://picture-bed-1251805293.file.myqcloud.com/640-20220418224216932.png)
 
 以北京健康报的核酸检测截图作为示例：
 
-![](https://mmbiz.qpic.cn/mmbiz_jpg/TQ8S0BVeWIxLBP4GT0ciaCzmsicp46u59yddJEiaDk3XTXZWCEU5ibcn6ELdIvCsY8jicEQOTyXs7iaMPGibPkrvON8tg/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="https://picture-bed-1251805293.file.myqcloud.com/640.jpeg" style="zoom:50%;" />
 
 
 OCR 使用 PaddlePaddle，会得到结果：
@@ -28,7 +29,7 @@ OCR 使用 PaddlePaddle，会得到结果：
 
 会得到提取到的核酸检测界面的结果：
 
-![](https://mmbiz.qpic.cn/mmbiz_png/TQ8S0BVeWIxLBP4GT0ciaCzmsicp46u59yBib9erPF4Vmg6TxXVUoFwUcepqh1pn43C4UVJGWOkFkACiaeqG8yEXqg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](https://picture-bed-1251805293.file.myqcloud.com/640-20220418224230204.png)
 
 
 我这里校验了三个条件：
@@ -48,12 +49,12 @@ python main.py --date=2020.06.24
 
 打开生成的 Excel 是这样的：
 
-![](https://mmbiz.qpic.cn/mmbiz_png/TQ8S0BVeWIxLBP4GT0ciaCzmsicp46u59yle87oGUm83jSs7fC9t64l9LSDC9h3PBeolb9asJNOOPichgGG4qBtyg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](https://picture-bed-1251805293.file.myqcloud.com/640-20220418224233173.png)
 
 是不是大大解放了生产力？
 我写的这份代码的总行数只有 82 行，比复旦博士的代码要简短一些。
 
-![](https://mmbiz.qpic.cn/mmbiz_png/TQ8S0BVeWIxLBP4GT0ciaCzmsicp46u59yicic93pPu6Z3nibOZWDGcNTwiavsAuGqWdqnd2uAiazHsvvI8qFdYhXVU1A/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](https://picture-bed-1251805293.file.myqcloud.com/640-20220418224236110.png)
 
 但是代码的运行时间比较慢：检验两张截图的时间需要 12 秒，也就是平均 6 秒检验一张截图。
 
@@ -101,7 +102,7 @@ python main.py --date=2020.06.24
 
 打开此 Excel，查看核酸检测结果、采样日期、是否完成核酸检测等信息：
 
-![](https://mmbiz.qpic.cn/mmbiz_png/TQ8S0BVeWIxLBP4GT0ciaCzmsicp46u59yle87oGUm83jSs7fC9t64l9LSDC9h3PBeolb9asJNOOPichgGG4qBtyg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](https://picture-bed-1251805293.file.myqcloud.com/640-20220418224243576.png)
 
 ## 缺陷
 
