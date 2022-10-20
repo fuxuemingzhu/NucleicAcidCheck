@@ -5,6 +5,7 @@ import re
 import time
 import pandas as pd
 import fire
+import numpy as np
 
 table_engine = PPStructure(show_log=False)
 
@@ -50,7 +51,7 @@ def deal_file(date="2020.06.24"):
     for file in os.listdir(date):
         img_path = date + "/" + file
         username = file.split(".")[0]
-        img = cv2.imread(img_path)
+        img = cv2.imdecode(np.fromfile((img_path),dtype=np.uint8),-1)
         results = table_engine(img)
 
         total = ""
